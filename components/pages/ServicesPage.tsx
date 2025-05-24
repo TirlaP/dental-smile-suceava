@@ -9,14 +9,33 @@ const MotionVStack = motion(VStack)
 
 interface ServicesPageProps {
   businessInfo: any
-  onNavigate: (page: string) => void
 }
 
-export default function ServicesPage({ businessInfo, onNavigate }: ServicesPageProps) {
+export default function ServicesPage({ businessInfo }: ServicesPageProps) {
   const bgColor = useColorModeValue('white', 'gray.800')
   const textColor = useColorModeValue('gray.700', 'gray.300')
   const headingColor = useColorModeValue('gray.800', 'white')
   const cardBg = useColorModeValue('gray.50', 'gray.700')
+  
+  // Service background colors
+  const blueBg = useColorModeValue('blue.50', 'blue.900')
+  const pinkBg = useColorModeValue('pink.50', 'pink.900')
+  const greenBg = useColorModeValue('green.50', 'green.900')
+  const purpleBg = useColorModeValue('purple.50', 'purple.900')
+  const orangeBg = useColorModeValue('orange.50', 'orange.900')
+  const redBg = useColorModeValue('red.50', 'red.900')
+  
+  const getColorBg = (color: string) => {
+    switch(color) {
+      case 'blue.500': return blueBg
+      case 'pink.500': return pinkBg
+      case 'green.500': return greenBg
+      case 'purple.500': return purpleBg
+      case 'orange.500': return orangeBg
+      case 'red.500': return redBg
+      default: return cardBg
+    }
+  }
   
   const services = [
     {
@@ -135,7 +154,7 @@ export default function ServicesPage({ businessInfo, onNavigate }: ServicesPageP
                   <VStack spacing={4}>
                     <Box
                       p={4}
-                      bg={useColorModeValue(`${service.color.split('.')[0]}.50`, `${service.color.split('.')[0]}.900`)}
+                      bg={getColorBg(service.color)}
                       borderRadius="2xl"
                       color={service.color}
                     >

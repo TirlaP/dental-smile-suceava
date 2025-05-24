@@ -31,31 +31,43 @@ export default function HomePage({ businessInfo }: HomePageProps) {
   const textColor = useColorModeValue('gray.700', 'gray.300')
   const headingColor = useColorModeValue('gray.800', 'white')
   const accentColor = useColorModeValue('blue.600', 'blue.400')
-  const cardBg = useColorModeValue('gray.50', 'gray.700')  
+  const cardBg = useColorModeValue('gray.50', 'gray.700')
+  const borderColor = useColorModeValue('gray.200', 'gray.600')
+  
+  // Service background colors
+  const pinkBg = useColorModeValue('pink.50', 'pink.900')
+  const blueBg = useColorModeValue('blue.50', 'blue.900')
+  const greenBg = useColorModeValue('green.50', 'green.900')
+  const purpleBg = useColorModeValue('purple.50', 'purple.900')
+  
   const services = [
     {
       icon: Heart,
       title: 'Stomatologie Copii',
       description: 'Îngrijire specializată pentru copii - medici care vorbesc frumos cu cei mici',
-      color: 'pink.500'
+      color: 'pink.500',
+      bg: pinkBg
     },
     {
       icon: Users,
       title: 'Stomatologie Adulți',
       description: 'Servicii complete pentru adulți într-o atmosferă caldă și prietenoasă',
-      color: 'blue.500'
+      color: 'blue.500',
+      bg: blueBg
     },
     {
       icon: Shield,
       title: 'Ortodonție (Aparate Dentare)',
       description: 'Aparate dentare moderne pentru toate vârstele cu rezultate garantate',
-      color: 'green.500'
+      color: 'green.500',
+      bg: greenBg
     },
     {
       icon: Activity,
       title: 'Implantologie Dentară',
       description: 'Implanturi de calitate superioară - pacienți 100% mulțumiți',
-      color: 'purple.500'
+      color: 'purple.500',
+      bg: purpleBg
     }
   ]
   
@@ -463,7 +475,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                     spacing={4}
                     h="full"
                     borderWidth={1}
-                    borderColor={useColorModeValue('gray.200', 'gray.600')}
+                    borderColor={borderColor}
                     position="relative"
                     overflow="hidden"
                     _hover={{
@@ -487,7 +499,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                     
                     <Box
                       p={4}
-                      bg={useColorModeValue(`${service.color.split('.')[0]}.50`, `${service.color.split('.')[0]}.900`)}
+                      bg={service.bg}
                       color={service.color}
                       borderRadius="full"
                     >
@@ -677,7 +689,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                   p={8}
                   borderRadius="2xl"
                   borderWidth={1}
-                  borderColor={useColorModeValue('gray.200', 'gray.600')}
+                  borderColor={borderColor}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -689,7 +701,6 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                   }}
                   position="relative"
                   overflow="hidden"
-                  transition="all 0.3s"
                 >
                   {/* Top gradient accent */}
                   <Box
@@ -717,7 +728,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                     fontSize="sm"
                     fontWeight="bold"
                   >
-                    "
+                    &ldquo;
                   </Box>
                   
                   <VStack align="start" spacing={5} pt={4}>
@@ -744,7 +755,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                     </Text>
                     
                     {/* Patient info */}
-                    <Box pt={2} borderTop="1px solid" borderColor={useColorModeValue('gray.200', 'gray.600')} w="full">
+                    <Box pt={2} borderTop="1px solid" borderColor={borderColor} w="full">
                       <Text fontWeight="bold" color={headingColor} fontSize="md">
                         {testimonial.name}
                       </Text>

@@ -17,6 +17,28 @@ export default function ProjectsPage({ businessInfo }: ProjectsPageProps) {
   const headingColor = useColorModeValue('gray.800', 'white')
   const cardBg = useColorModeValue('gray.50', 'gray.700')
   
+  // Case background colors
+  const purpleBg = useColorModeValue('purple.50', 'purple.900')
+  const blueBg = useColorModeValue('blue.50', 'blue.900')
+  const greenBg = useColorModeValue('green.50', 'green.900')
+  const pinkBg = useColorModeValue('pink.50', 'pink.900')
+  const redBg = useColorModeValue('red.50', 'red.900')
+  const orangeBg = useColorModeValue('orange.50', 'orange.900')
+  const tealBg = useColorModeValue('teal.50', 'teal.900')
+  
+  const getColorBg = (color: string) => {
+    switch(color) {
+      case 'purple.500': return purpleBg
+      case 'blue.500': return blueBg
+      case 'green.500': return greenBg
+      case 'pink.500': return pinkBg
+      case 'red.500': return redBg
+      case 'orange.500': return orangeBg
+      case 'teal.500': return tealBg
+      default: return cardBg
+    }
+  }
+  
   const cases = [
     {
       title: 'Transformare Completă cu Fațete Ceramice',
@@ -141,7 +163,7 @@ export default function ProjectsPage({ businessInfo }: ProjectsPageProps) {
                   h="full"
                 >
                   {/* Case Header */}
-                  <Box w="full" p={6} bg={useColorModeValue(`${case_item.color.split('.')[0]}.50`, `${case_item.color.split('.')[0]}.900`)}>
+                  <Box w="full" p={6} bg={getColorBg(case_item.color)}>
                     <HStack justify="space-between" align="start">
                       <VStack align="start" spacing={3}>
                         <HStack spacing={3}>
