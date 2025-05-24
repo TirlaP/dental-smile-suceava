@@ -3,7 +3,7 @@
 import { AspectRatio, Badge, Box, Button, Container, HStack, Heading, Icon, SimpleGrid, Stack, Text, VStack, useColorModeValue } from '@chakra-ui/react'
 import { keyframes } from '@emotion/react'
 import { motion } from 'framer-motion'
-import { Activity, AlertCircle, ArrowRight, Award, Calendar, CheckCircle, Clock, DollarSign, Heart, PhoneCall, Shield, Sparkles, Star, ThumbsUp, Users } from 'lucide-react'
+import { Activity, ArrowRight, Award, Calendar, CheckCircle, Heart, PhoneCall, Shield, Sparkles, Star, Users } from 'lucide-react'
 import Link from 'next/link'
 
 const MotionBox = motion(Box)
@@ -187,7 +187,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
               </VStack>
               
               {/* CTA Buttons */}
-              <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} pt={2} w={{ base: 'full', sm: 'auto' }}>
+              <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} pt={2} w={{ base: 'full', md: 'auto' }}>
                 <Button
                   as={Link}
                   href="/contact"
@@ -878,7 +878,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
               </Stack>
             </VStack>
             
-            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} justify="center" w={{ base: 'full', sm: 'auto' }}>
+            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} justify="center" w={{ base: 'full', md: 'auto' }}>
               <Button
                 as={Link}
                 href="/contact"
