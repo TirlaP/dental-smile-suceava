@@ -1,8 +1,8 @@
 'use client'
 
-import { Badge, Box, Button, Container, HStack, Heading, Icon, SimpleGrid, Text, VStack, useColorModeValue, Image, AspectRatio } from '@chakra-ui/react'
+import { Badge, Box, Button, Container, HStack, Heading, Icon, SimpleGrid, Stack, Text, VStack, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Activity, Heart, Sparkles, Shield, Zap, Clock, Award, CheckCircle, Phone, Users } from 'lucide-react'
+import { Activity, ArrowRight, Award, CheckCircle, Heart, Phone, Shield, Users } from 'lucide-react'
 import Link from 'next/link'
 
 const MotionBox = motion(Box)
@@ -230,7 +230,7 @@ export default function ServicesPage({ businessInfo }: ServicesPageProps) {
               </Text>
             </VStack>
             
-            <Stack 
+            <Stack
               direction={{ base: 'column', sm: 'row' }} 
               spacing={4} 
               justify="center"
