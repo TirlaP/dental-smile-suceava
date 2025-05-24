@@ -8,11 +8,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://dentistepar.ro'),
   title: {
-    default: 'Cabinet Stomatologic București - Servicii Dentare Complete | DentistExpert',
+    default: 'Cabinet Stomatologic Suceava - Servicii Dentare Complete | DentistExpert',
     template: '%s | DentistExpert'
   },
-  description: 'Cabinet stomatologic modern în București. Implantologie, ortodonție, estetica dentară, urgențe stomatologice. Programări online. Sună acum: 0722 234 567',
-  keywords: ['dentist bucuresti', 'cabinet stomatologic', 'implant dentar', 'ortodontie', 'estetica dentara', 'urgente stomatologice', 'albire dinti', 'proteza dentara', 'carie dentara', 'extractie dinte'],
+  description: 'Cabinet stomatologic modern în Suceava. Implantologie, ortodonție, estetica dentară, urgențe stomatologice. Programări online. Sună acum: 0722 234 567',
+  keywords: ['dentist suceava', 'cabinet stomatologic', 'implant dentar', 'ortodontie', 'estetica dentara', 'urgente stomatologice', 'albire dinti', 'proteza dentara', 'carie dentara', 'extractie dinte'],
   authors: [{ name: 'DentistExpert' }],
   creator: 'DentistExpert',
   publisher: 'DentistExpert',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Cabinet Stomatologic București - Servicii Dentare Complete | DentistExpert',
-    description: 'Cabinet stomatologic modern în București. Implantologie, ortodonție, estetica dentară, urgențe stomatologice. Programări online.',
+    title: 'Cabinet Stomatologic Suceava - Servicii Dentare Complete | DentistExpert',
+    description: 'Cabinet stomatologic modern în Suceava. Implantologie, ortodonție, estetica dentară, urgențe stomatologice. Programări online.',
     url: 'https://dentistepar.ro',
     siteName: 'DentistExpert',
     locale: 'ro_RO',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'DentistExpert - Cabinet Stomatologic Modern București',
+    title: 'DentistExpert - Cabinet Stomatologic Modern Suceava',
     card: 'summary_large_image',
   },
   verification: {
@@ -70,7 +70,7 @@ export default function RootLayout({
               'address': {
                 '@type': 'PostalAddress',
                 'streetAddress': 'Strada Dorobanti 25',
-                'addressLocality': 'București',
+                'addressLocality': 'Suceava',
                 'postalCode': '010573',
                 'addressCountry': 'RO'
               },
