@@ -52,22 +52,30 @@ export default function Footer({ businessInfo }: FooterProps) {
             <Text color="blue.100" textAlign="center">
               Primește sfaturi de îngrijire dentară și oferte exclusive
             </Text>
-            <HStack maxW="md" w="full">
+            <Flex 
+              direction={{ base: 'column', sm: 'row' }} 
+              maxW="md" 
+              w="full" 
+              gap={{ base: 3, sm: 0 }}
+            >
               <Input
                 placeholder="Adresa ta de email"
                 bg="white"
                 color="gray.900"
                 _placeholder={{ color: 'gray.500' }}
                 size="lg"
+                borderRightRadius={{ base: 'md', sm: 0 }}
               />
               <Button
                 size="lg"
                 colorScheme="orange"
                 rightIcon={<Send size={18} />}
+                borderLeftRadius={{ base: 'md', sm: 0 }}
+                w={{ base: 'full', sm: 'auto' }}
               >
                 Abonează-te
               </Button>
-            </HStack>
+            </Flex>
             <Text fontSize="xs" color="blue.100">
               Prin abonare, ești de acord cu Politica de Confidențialitate și procesarea datelor conform GDPR
             </Text>
@@ -76,8 +84,8 @@ export default function Footer({ businessInfo }: FooterProps) {
       </Box>
       
       {/* Main Footer Content */}
-      <Container maxW="container.xl" py={{ base: 12, md: 16 }}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4, lg: 5 }} spacing={8}>
+      <Container maxW="container.xl" py={{ base: 8, md: 12, lg: 16 }}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 5 }} spacing={{ base: 6, md: 8 }}>
           {/* Company Info */}
           <VStack align="start" spacing={4}>
             <HStack spacing={3} mb={2}>

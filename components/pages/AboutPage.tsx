@@ -179,7 +179,7 @@ export default function AboutPage({ businessInfo }: AboutPageProps) {
                     borderRadius="2xl"
                     spacing={6}
                     borderWidth={1}
-                    borderColor={useColorModeValue('gray.200', 'gray.600')}
+                    borderColor={borderColor}
                     _hover={{ shadow: 'xl', transform: 'translateY(-4px)' }}
                     transition="all 0.3s"
                   >

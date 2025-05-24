@@ -129,7 +129,7 @@ export default function Navigation({ currentPage, businessInfo }: NavigationProp
           ))}
         </HStack>
         
-        {/* CTA Button */}
+        {/* CTA Button - Responsive */}
         <Button
           colorScheme={shouldUseLightColors ? 'whiteAlpha' : 'blue'}
           variant={shouldUseLightColors ? 'outline' : 'solid'}
@@ -145,7 +145,8 @@ export default function Navigation({ currentPage, businessInfo }: NavigationProp
           }}
           transition="all 0.3s"
         >
-          Programare: {businessInfo.phone}
+          <Text display={{ base: 'none', lg: 'inline' }}>Programare: </Text>
+          {businessInfo.phone}
         </Button>
       </Show>
     </Flex>

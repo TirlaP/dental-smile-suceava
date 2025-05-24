@@ -188,38 +188,38 @@ export default function HomePage({ businessInfo }: HomePageProps) {
               
               {/* CTA Buttons */}
               <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} pt={2} w={{ base: 'full', sm: 'auto' }}>
-                <Link href="/contact" style={{ textDecoration: 'none' }}>
-                  <Button
-                    size="xl"
-                    h="60px"
-                    px={8}
-                    bg="white"
-                    color="purple.700"
-                    fontWeight="bold"
-                    fontSize="lg"
-                    _hover={{ 
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
-                    }}
-                    leftIcon={<Calendar />}
-                    w={{ base: 'full', sm: 'auto' }}
-                    transition="all 0.3s"
-                    borderRadius="2xl"
-                    boxShadow="0 10px 30px rgba(0,0,0,0.2)"
-                  >
-                    Programează Consultația
-                  </Button>
-                </Link>
                 <Button
-                  size="xl"
-                  h="60px"
-                  px={8}
+                  as={Link}
+                  href="/contact"
+                  size={{ base: 'lg', md: 'xl' }}
+                  h={{ base: '50px', md: '60px' }}
+                  px={{ base: 6, md: 8 }}
+                  bg="white"
+                  color="purple.700"
+                  fontWeight="bold"
+                  fontSize={{ base: 'md', md: 'lg' }}
+                  _hover={{ 
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+                  }}
+                  leftIcon={<Calendar />}
+                  w={{ base: 'full', sm: 'auto' }}
+                  transition="all 0.3s"
+                  borderRadius="2xl"
+                  boxShadow="0 10px 30px rgba(0,0,0,0.2)"
+                >
+                  Programează Consultația
+                </Button>
+                <Button
+                  size={{ base: 'lg', md: 'xl' }}
+                  h={{ base: '50px', md: '60px' }}
+                  px={{ base: 6, md: 8 }}
                   variant="outline"
                   borderColor="white"
                   borderWidth={2}
                   color="white"
                   fontWeight="bold"
-                  fontSize="lg"
+                  fontSize={{ base: 'md', md: 'lg' }}
                   _hover={{ 
                     bg: 'whiteAlpha.200',
                     transform: 'translateY(-2px)'
@@ -237,7 +237,13 @@ export default function HomePage({ businessInfo }: HomePageProps) {
               </Stack>
               
               {/* Stats */}
-              <HStack spacing={8} pt={6} flexWrap="wrap" justify={{ base: 'center', lg: 'start' }}>
+              <Stack 
+                direction={{ base: 'column', sm: 'row' }} 
+                spacing={{ base: 4, sm: 8 }} 
+                pt={6} 
+                align="center" 
+                justify={{ base: 'center', lg: 'start' }}
+              >
                 <VStack spacing={1}>
                   <HStack>
                     {[...Array(5)].map((_, i) => (
@@ -264,7 +270,7 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                     Clinică în Suceava
                   </Text>
                 </VStack>
-              </HStack>
+              </Stack>
             </MotionVStack>
             
             {/* Right Visual Element */}
@@ -850,54 +856,61 @@ export default function HomePage({ businessInfo }: HomePageProps) {
               </Text>
               
               {/* Benefits */}
-              <HStack spacing={8} flexWrap="wrap" justify="center" pt={4}>
+              <Stack 
+                direction={{ base: 'column', sm: 'row' }} 
+                spacing={{ base: 3, sm: 8 }} 
+                justify="center" 
+                pt={4}
+                align="center"
+              >
                 <HStack>
                   <Icon as={CheckCircle} boxSize={5} color="green.300" />
-                  <Text fontWeight="medium">Consultație gratuită</Text>
+                  <Text fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }}>Consultație gratuită</Text>
                 </HStack>
                 <HStack>
                   <Icon as={Shield} boxSize={5} color="blue.300" />
-                  <Text fontWeight="medium">Fără durere</Text>
+                  <Text fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }}>Fără durere</Text>
                 </HStack>
                 <HStack>
                   <Icon as={Award} boxSize={5} color="yellow.300" />
-                  <Text fontWeight="medium">Garanție pe viață</Text>
+                  <Text fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }}>Garanție pe viață</Text>
                 </HStack>
-              </HStack>
+              </Stack>
             </VStack>
             
-            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} justify="center">
-              <Link href="/contact">
-                <Button
-                  size="xl"
-                  h="60px"
-                  px={10}
-                  bg="white"
-                  color="purple.700"
-                  fontWeight="bold"
-                  fontSize="lg"
-                  _hover={{ 
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
-                  }}
-                  leftIcon={<Calendar />}
-                  transition="all 0.3s"
-                  borderRadius="2xl"
-                  boxShadow="0 10px 30px rgba(0,0,0,0.2)"
-                >
-                  Programează Consultația Gratuită
-                </Button>
-              </Link>
+            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} justify="center" w={{ base: 'full', sm: 'auto' }}>
               <Button
-                size="xl"
-                h="60px"
-                px={8}
+                as={Link}
+                href="/contact"
+                size={{ base: 'lg', md: 'xl' }}
+                h={{ base: '50px', md: '60px' }}
+                px={{ base: 6, md: 10 }}
+                bg="white"
+                color="purple.700"
+                fontWeight="bold"
+                fontSize={{ base: 'md', md: 'lg' }}
+                _hover={{ 
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+                }}
+                leftIcon={<Calendar />}
+                transition="all 0.3s"
+                borderRadius="2xl"
+                boxShadow="0 10px 30px rgba(0,0,0,0.2)"
+                w={{ base: 'full', sm: 'auto' }}
+              >
+                Programează Consultația Gratuită
+              </Button>
+              <Button
+                size={{ base: 'lg', md: 'xl' }}
+                h={{ base: '50px', md: '60px' }}
+                px={{ base: 6, md: 8 }}
                 variant="outline"
                 borderColor="white"
                 borderWidth={2}
                 color="white"
                 fontWeight="bold"
-                fontSize="lg"
+                fontSize={{ base: 'md', md: 'lg' }}
                 _hover={{ 
                   bg: 'whiteAlpha.200',
                   transform: 'translateY(-2px)'
@@ -908,17 +921,25 @@ export default function HomePage({ businessInfo }: HomePageProps) {
                 transition="all 0.3s"
                 borderRadius="2xl"
                 backdropFilter="blur(10px)"
+                w={{ base: 'full', sm: 'auto' }}
               >
-                Sună: {businessInfo.phone}
+                <Text display={{ base: 'none', sm: 'inline' }}>Sună: </Text>
+                {businessInfo.phone}
               </Button>
             </Stack>
             
             {/* Trust signals */}
-            <HStack spacing={6} pt={4} opacity={0.9} flexWrap="wrap" justify="center">
-              <Text fontSize="sm">✓ Peste 3000 de pacienți fericiți</Text>
-              <Text fontSize="sm">✓ 12+ ani de experiență</Text>
-              <Text fontSize="sm">✓ Echipamente de ultimă generație</Text>
-            </HStack>
+            <Stack 
+              direction={{ base: 'column', md: 'row' }} 
+              spacing={{ base: 2, md: 6 }} 
+              pt={4} 
+              opacity={0.9} 
+              align="center"
+            >
+              <Text fontSize={{ base: 'xs', md: 'sm' }}>✓ Peste 3000 de pacienți fericiți</Text>
+              <Text fontSize={{ base: 'xs', md: 'sm' }}>✓ 12+ ani de experiență</Text>
+              <Text fontSize={{ base: 'xs', md: 'sm' }}>✓ Echipamente de ultimă generație</Text>
+            </Stack>
           </MotionVStack>
         </Container>
       </Box>
