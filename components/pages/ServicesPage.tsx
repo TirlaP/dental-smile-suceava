@@ -230,29 +230,37 @@ export default function ServicesPage({ businessInfo }: ServicesPageProps) {
               </Text>
             </VStack>
             
-            <HStack spacing={4} flexWrap="wrap" justify="center">
+            <Stack 
+              direction={{ base: 'column', sm: 'row' }} 
+              spacing={4} 
+              justify="center"
+              w={{ base: 'full', sm: 'auto' }}
+            >
               <Button
-                size="lg"
+                size={{ base: 'md', md: 'lg' }}
                 bg="white"
                 color="blue.600"
                 _hover={{ bg: 'gray.100' }}
                 leftIcon={<Phone />}
                 as="a"
                 href={`tel:${businessInfo.phone}`}
+                w={{ base: 'full', sm: 'auto' }}
               >
                 Sună: {businessInfo.phone}
               </Button>
               <Button
-                size="lg"
+                as={Link}
+                href="/contact"
+                size={{ base: 'md', md: 'lg' }}
                 variant="outline"
                 borderColor="white"
                 color="white"
                 _hover={{ bg: 'whiteAlpha.200' }}
-                onClick={() => onNavigate('contact')}
+                w={{ base: 'full', sm: 'auto' }}
               >
                 Programează Online
               </Button>
-            </HStack>
+            </Stack>
           </MotionVStack>
         </Container>
       </Box>
