@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { Box, useColorModeValue, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, Button, IconButton, Hide } from '@chakra-ui/react'
 import ScrollingNavbar from '@/components/components/ScrollingNavbar'
 import Footer from '@/components/components/Footer'
@@ -12,6 +13,15 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const bgColor = useColorModeValue('gray.50', 'gray.900')
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isScrolled, setIsScrolled] = React.useState(false)
+  
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   
   // Map pathnames to page names for backward compatibility
   const getCurrentPage = () => {
@@ -49,8 +59,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
             icon={<Menu />}
             onClick={onOpen}
             variant="ghost"
-            color={getCurrentPage() === 'home' ? 'white' : 'gray.600'}
-            _hover={{ bg: getCurrentPage() === 'home' ? 'whiteAlpha.200' : 'gray.100' }}
+            color={getCurrentPage() === 'home' && !isScrolled ? 'white' : 'gray.600'}
+            _hover={{ bg: getCurrentPage() === 'home' && !isScrolled ? 'whiteAlpha.200' : 'gray.100' }}
           />
         </Hide>
       </ScrollingNavbar>
