@@ -3,6 +3,7 @@
 import { Badge, Box, Button, Container, HStack, Heading, Icon, SimpleGrid, Text, VStack, useColorModeValue, Image, AspectRatio } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Activity, Heart, Sparkles, Shield, Zap, Clock, Award, CheckCircle, Phone, Users } from 'lucide-react'
+import Link from 'next/link'
 
 const MotionBox = motion(Box)
 const MotionVStack = motion(VStack)
@@ -193,11 +194,12 @@ export default function ServicesPage({ businessInfo }: ServicesPageProps) {
                       </Text>
                     </Box>
                     <Button
+                      as={Link}
+                      href="/contact"
                       colorScheme={service.color.split('.')[0]}
                       size="lg"
                       w="full"
                       rightIcon={<ArrowRight />}
-                      onClick={() => onNavigate('contact')}
                     >
                       Programează Consultație
                     </Button>
